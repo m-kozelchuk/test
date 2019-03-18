@@ -1,0 +1,183 @@
+mixin icon(name)
+  svg(class=`icon icon-${name}`)
+    use(xlink:href=`img/sprite.svg#icon-${name}`)
+
+
+doctype html
+html
+  head
+    block head
+      meta(charset="utf-8")
+      title Gulp/Jade template
+      link(rel="icon", href="/favicon.ico")
+      link(href="https://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet")
+      link(rel="stylesheet", href="css/style.css")
+      script(src="js/vendors/picturefill.min.js")
+  body
+    .docs
+      .docs__title Add at least one document to your flow
+      .docs__inn
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/document.svg')
+          .doc__title
+            .doc__name
+              p 1. Simple document
+              span.doc__change
+                +icon('change')
+            .doc__info
+              p 10 pages / No fillable fields
+          .doc__btn
+            button Add fillable fields
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/document.svg')
+            img(src='img/fillable-mark.svg', class="fillable-mark")
+          .doc__title
+            .doc__name.is-active
+              p(contenteditable="true") 2. Fillable fields
+              span.doc__change
+                +icon('change')
+            .doc__info
+              p 1 page / 2 fillable fields
+          .doc__btn
+            button Edit fillable fields
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/document.svg')
+          .doc__title
+            .doc__name
+              p 3. Created document
+              span.doc__change
+                +icon('change')
+            .doc__info
+              p 4 pages / 2 fillable fields
+          .doc__btn
+            button Add fillable fields
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/form.svg')
+          .doc__title
+            .doc__name
+              p 4. airSlate Form
+              span.doc__change
+                +icon('change')
+            .doc__info
+              p 10 questions
+          .doc__btn
+            button Edit form settings
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/generate.svg')
+          .doc__title
+            .doc__name
+              p 5. Generated document
+              span.doc__change
+                +icon('change')
+            .doc__info
+              p 2 pages / 12 tags used
+          .doc__btn
+            button Edit settings
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/autentication.svg')
+          .doc__title
+            .doc__name
+              p 6. User Authentication
+              span.doc__change
+                +icon('change')
+          .doc__btn
+            button Edit settings
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/payment.svg')
+          .doc__title
+            .doc__name
+              p 7. Payment order form
+              span.doc__change
+                +icon('change')
+          .doc__btn
+            button Edit settings
+          .doc__delete
+            button
+              +icon('delete')
+        .doc
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/attachment.svg')
+          .doc__title
+            .doc__name
+              p 8. Attachment request
+              span.doc__change
+                +icon('change')
+          .doc__btn
+            button Edit settings
+          .doc__delete
+            button
+              +icon('delete')
+        .doc.doc_upload
+          .doc__drag
+            +icon('drag')
+          .doc__icon
+            img(src='img/document.svg')
+          .doc__title
+            .doc__name
+              p 9. Document name
+            .doc__info
+              p Uploading...
+          .doc__loader
+            img(src='img/loader.svg')
+        .doc.doc_delete
+          .doc__title
+            .doc__name
+              p Delete from list
+            .doc__info
+              p Are you sure you want to delete the following document?
+          .doc__btns
+            button.delete-no No
+            button.delete-yes Yes
+        .doc.doc_empty
+            +icon('upload')
+            p No documents
+        .doc.doc_add
+          button
+            +icon('add')
+            p Add New
+
+    script(src="js/app.js")
+
+
+
